@@ -12,5 +12,14 @@ public class SplitDemo
 		{
 			System.out.println(s);
 		}
+		
+		String str1 = "hanzhongliu1990@gmail.com";
+		
+		String[] tokens1 = str1.split("[@.]");
+		
+		for(String s : tokens1)
+		{
+			System.out.println(s);
+		}
 	}
 }
