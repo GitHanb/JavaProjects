@@ -28,7 +28,8 @@ public class FinalExam2 extends GradeActivity2
 	{
 		return numMissed;
 	}
-
+	
+	//score rounds up
 	private void adjustScore()
 	{
 		double fraction;
