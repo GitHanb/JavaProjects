@@ -1,6 +1,8 @@
 package problemDomain;
 
 import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -36,11 +38,33 @@ public class KiloConverter extends JFrame
 		
 		calcButton = new JButton("Calculate");
 		
+		calcButton.addActionListener(new CalcButtonListener());
+		
 		panel = new JPanel();
 		
 		panel.add(messageLabel);
 		panel.add(kiloTextField);
 		panel.add(calcButton);	
+	}
+	
+	private class CalcButtonListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			final double CONVERSION = 0.6214;
+			String input;
+			double miles;
+			
+			input = kiloTextField.getText();
+			
+			miles = Double.parseDouble(input) * CONVERSION;
+			
+			JOptionPane.showMessageDialog(null, input + " kilometers is " + miles + " miles.");
+			
+		}
+		
 	}
 
 	public static void main(String[] args)
