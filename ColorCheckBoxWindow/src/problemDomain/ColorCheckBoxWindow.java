@@ -31,6 +31,8 @@ public class ColorCheckBoxWindow extends JFrame
 		yellowCheckBox.addItemListener(new CheckBoxListener());
 		redCheckBox.addItemListener(new CheckBoxListener());
 		
+		//yellowCheckBox.doClick();
+		
 		setLayout(new FlowLayout());
 		
 		add(messageLabel);
