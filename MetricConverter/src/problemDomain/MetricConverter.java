@@ -75,6 +75,11 @@ public class MetricConverter extends JFrame
 			
 			input = kiloTextField.getText();
 			
+			if(input.isEmpty())
+			{
+				input = "0";
+			}
+			
 			if(e.getSource() == milesButton)
 			{
 				convertTo = " miles.";
