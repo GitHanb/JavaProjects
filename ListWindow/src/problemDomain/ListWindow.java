@@ -47,7 +47,9 @@ public class ListWindow extends JFrame
 	{
 		monthPanel = new JPanel();
 		
-		monthList = new JList(months);
+		monthList = new JList();
+		
+		monthList.setListData(months);
 		
 		monthList.setVisibleRowCount(10);
 		
