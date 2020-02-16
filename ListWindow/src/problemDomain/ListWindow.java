@@ -1,6 +1,7 @@
 package problemDomain;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -11,6 +12,7 @@ public class ListWindow extends JFrame
 	private JPanel monthPanel;
 	private JPanel selectedMonthPanel;
 	private JList monthList;
+	private JScrollPane scrollPane;
 	private JTextField selectedMonth;
 	private JLabel label;
 	
@@ -47,11 +49,17 @@ public class ListWindow extends JFrame
 		
 		monthList = new JList(months);
 		
+		monthList.setVisibleRowCount(10);
+		
 		monthList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
 		monthList.addListSelectionListener(new ListListener());
 		
-		monthPanel.add(monthList);
+		monthList.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+		
+		scrollPane = new JScrollPane(monthList);
+		
+		monthPanel.add(scrollPane);
 		
 	}
 	
